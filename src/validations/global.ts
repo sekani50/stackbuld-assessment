@@ -1,14 +1,10 @@
 import * as z from "zod";
 
-export const loginSchema = z.object({
-  email: z
-    .string()
-    .email({ message: "Email must be a valid email" })
-    .min(1, { message: "Email is required" }),
+export const categorySchema = z.object({
+  id: z.string(),
+  name: z.string().min(3, {message: "Name is required"}),
+  image: z.any()
+  
+})
 
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" })
-    .min(1, { message: "Password is required" }),
-});
-
+//description: z.string().min(1).max(255),

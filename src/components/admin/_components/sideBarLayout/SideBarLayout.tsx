@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname} from "next/navigation";
 import { cn } from "@/lib";
 
-import { Button } from "@/components";
+import { Button } from "@/components/ui";
 import { CgMenuLeft } from "react-icons/cg";
 
 import { navLinks } from "@/constants/constants";
@@ -23,7 +23,7 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div
-        className={`w-full  right-0 sm:right-[16px] z-50 fixed bg-white border-b border-gray-200  flex justify-between items-center `}
+        className={`w-full  right-0 sm:right-[16px] z-40 fixed bg-white border-b border-gray-200  flex justify-between items-center `}
       >
         <div className="px-6 h-[3.5rem] sm:h-[4.5rem] justify-between   w-full flex items-center">
           <div className="flex items-center  bg-basePrimary gradient-text text-lg font-semibold sm:text-2xl gap-x-2">
@@ -66,7 +66,7 @@ function SideNavs({ close, isNav }: { close: () => void; isNav: boolean }) {
         close();
       }}
       className={cn(
-        `fixed z-[70] bottom-0 top-0  sm:top-[4.6rem] bg-white left-0 h-full sm:h-[92vh] modal swipeInLeft`,
+        `fixed z-[45] bottom-0 top-0  sm:top-[4.6rem] bg-white left-0 h-full sm:h-[92vh] modal swipeInLeft`,
         isNav
           ? "w-full bg-white/50  min-[1280px]:w-[250px]"
           : "max-[1280px]:hidden w-[250px] "

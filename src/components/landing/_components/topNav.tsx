@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input } from "@/components";
+import { Button, Input } from "@/components/ui";
 import { cn } from "@/lib";
 import { LuPackagePlus } from "react-icons/lu";
 import Image from "next/image";

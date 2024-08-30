@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         basePrimary: "#FF057C",
+        baseSecondary: "#321575",
+        baseTertiary: "#8D0B93",
       },
       backgroundImage: {
         basePrimary: "linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%)",
