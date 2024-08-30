@@ -75,9 +75,9 @@ export function TopNav() {
           ))}
         </div>
 
-        <Button className="font-medium text-white bg-basePrimary">
+        <Button className="font-medium gap-x-2 text-white bg-basePrimary">
           <LuPackagePlus size={22}/>
-          <p>Add Product</p>
+          <p>Admin Products</p>
         </Button>
 
         <Button

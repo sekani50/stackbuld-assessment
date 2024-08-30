@@ -1,19 +1,20 @@
+import { TProduct } from "@/types";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
 
-// Define the user state interface
+// Define the product state interface
 interface productState {
-  products: any[] | null;
-  setProducts: (products: any[] | null) => void;
+  products: TProduct[] | null;
+  setProducts: (products: TProduct[] | null) => void;
 }
 
-// Create the user store
-const useUserStore = create<productState>()(
+// Create the  product store
+const useProductStore = create<productState>()(
   persist(
     (set) => ({
       products: null,
-  setProducts: (products: any[] | null) => set({ products }),
+  setProducts: (products: TProduct[] | null) => set({ products }),
     }),
     {
       name: "products", // name of the item in the storage (must be unique)
@@ -22,4 +23,4 @@ const useUserStore = create<productState>()(
   )
 );
 
-export default useUserStore;
+export default useProductStore;
