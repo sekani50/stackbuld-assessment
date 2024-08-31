@@ -63,7 +63,7 @@ export default function AdminCategories() {
             <div 
             key={category.id}
             className="w-full h-[10rem] rounded-lg  sm:h-[12rem] relative group">
-                <div className="w-full rounded-lg p-4 z-10 h-full inset-0 absolute bg-black/10">
+                <div className="w-full rounded-lg p-4 z-10 h-full inset-0 absolute bg-black/20">
                 <p className="w-full text-white text-ellipsis overflow-hidden whitespace-nowrap font-medium text-sm sm:text-base">
                     {category.name}
                 </p>

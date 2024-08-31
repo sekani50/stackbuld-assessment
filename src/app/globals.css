@@ -153,7 +153,7 @@ border-radius: 0px 0px 8px 8px;
 .description-input .ql-toolbar.ql-snow {
 border-radius: 8px 8px 0px 0px;
 border: 1px solid #f3f3f3 !important;
-background: #fdbada;
+background: #8d0b931a;
 }
 
 .description-input .ql-editor.ql-blank::before {
@@ -164,4 +164,43 @@ left: 15px;
 pointer-events: none;
 position: absolute;
 right: 15px;
+}
+
+
+.description-innerhtml h1 {
+  font-size: 2em;
+}
+.description-innerhtml h2 {
+  font-size: 1.5em;
+}
+.description-innerhtml h3 {
+  font-size: 1.17em;
+}
+.description-innerhtml h4 {
+  font-size: 1em;
+}
+.description-innerhtml h5 {
+  font-size: 0.83em;
+}
+.description-innerhtml h6 {
+  font-size: 0.67em;
+}
+
+/* Unordered List */
+.description-innerhtml ul {
+  list-style-type: disc; /* Default filled circle */
+  padding-left: 2rem;
+}
+
+/* Ordered List */
+.description-innerhtml ol {
+  list-style-type: decimal; /* Default decimal numbers */
+  padding-left: 2rem;
+}
+.description-innerhtml ul li {
+  padding-bottom: 2rem;
+}
+
+.description-innerhtml ol li {
+  padding-bottom: 2rem;
 }

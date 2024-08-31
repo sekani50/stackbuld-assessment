@@ -5,7 +5,7 @@ import { TbCategoryPlus } from "react-icons/tb";
 
 export const navLinks = [
   { name: "Dashboard", link: "/admin/dashboard", icon: RiDashboardHorizontalFill },
-  { name: "Products", link: "/admin/products", icon: MdProductionQuantityLimits },
+  { name: "Products", link: "/admin/product", icon: MdProductionQuantityLimits },
   { name: "Categories", link: "/admin/categories", icon: TbCategoryPlus },
  
 ];

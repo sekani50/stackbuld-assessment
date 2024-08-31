@@ -23,14 +23,22 @@ import { IoReturnUpBack } from "react-icons/io5";
 import { ReactSelect } from "@/components/ui/ReactSelect";
 import useProductStore from "@/store/globalProductStore";
 import toast from "react-hot-toast";
+import { MdClose } from "react-icons/md";
+import { TProduct } from "@/types";
 
 function ImagesUpload({
   form,
 }: {
   form: UseFormReturn<z.infer<typeof productSchema>, any, any>;
 }) {
+  const prevImages = form.watch("images")
   const [images, setImages] = useState<string[]>([]);
 
+  useEffect(() => {
+    if (prevImages && prevImages.length > 0) {
+      setImages(prevImages);
+    }
+  },[prevImages])
   async function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
       const file = e.target.files[0];
@@ -50,18 +58,31 @@ function ImagesUpload({
     }
   }, [images]);
 
+  // Function to remove an image from the list
+  function removeImage(index: number) {
+    setImages((prevImages) => prevImages.filter((_, i) => i !== index));
+  }
+
   return (
     <div className="w-full flex flex-wrap items-start gap-3">
       {images.map((image, index) => (
-        <Image
-          src={image}
-          alt={`image${index}`}
-          width={400}
-          height={400}
-          className="w-32 h-32 rounded-lg object-contain border"
-        />
+        <div className="w-full sm:w-56 h-40 rounded-lg relative">
+          <Image
+            src={image}
+            alt={`image${index}`}
+            width={400}
+            height={400}
+            className="w-full sm:w-56 h-40 rounded-lg object-cover border"
+          />
+          <button
+            onClick={() => removeImage(index)}
+            className="bg-black absolute top-3 right-3 text-white rounded-full flex items-center justify-center h-5 w-5"
+          >
+            <MdClose />
+          </button>
+        </div>
       ))}
-      <div className="w-full sm:w-32 rounded-lg p-4 bg-basePrimary bg-opacity-80 h-32 flex items-center justify-center relative">
+      <div className="w-full sm:w-56 rounded-lg p-4 bg-basePrimary bg-opacity-80 h-40 flex items-center justify-center relative">
         <label
           htmlFor="productImageUpload"
           className="relative bg-white/50 flex z-20 items-center gap-x-2 w-full px-4  rounded-md outline-none border border-white h-12"
@@ -84,8 +105,14 @@ function ImagesUpload({
     </div>
   );
 }
-export function AddProduct({ close }: { close: () => void }) {
-  const { categories, setCategories } = useCategoryStore(); // Use the global category store
+export function AddProduct({
+  close,
+  product,
+}: {
+  product?: TProduct;
+  close: () => void;
+}) {
+  const { categories } = useCategoryStore(); // Use the global category store
   const { products, setProducts } = useProductStore(); // Use the global product store
   const form = useForm<z.infer<typeof productSchema>>({
     resolver: zodResolver(productSchema),
@@ -106,6 +133,24 @@ export function AddProduct({ close }: { close: () => void }) {
     );
     // Add category to the global category store
     if (products !== null) {
+     // update the product in the global product store
+     if (product && product.id) {
+      setProducts(products?.map((p) => {
+        if (p.id === product.id) {
+          return {
+           ...p,
+           ...values,
+            images: values.images as string[],
+            price: Number(values.price),
+            discount: Number(values.discount),
+            category: selectedCategory!,
+            id: p.id
+          };
+        }
+        return p
+      }))
+     }
+     else {
       setProducts([
         ...products,
         {
@@ -116,6 +161,7 @@ export function AddProduct({ close }: { close: () => void }) {
           category: selectedCategory!,
         },
       ]);
+     }
     } else {
       setProducts([
         {
@@ -149,6 +195,19 @@ export function AddProduct({ close }: { close: () => void }) {
     }
   }, [categories]);
 
+  // Update form values when editing a product
+  useEffect(() => {
+    if (product) {
+      form.setValue("id", product.id);
+      form.setValue("name", product.name);
+      form.setValue("description", product.description);
+      form.setValue("price", product.price.toString());
+      form.setValue("discount", product.discount.toString());
+      form.setValue("images", product.images);
+      form.setValue("category", product.category.id);
+    }
+  }, [product]);
+
   return (
     <div className="w-full fixed inset-0 bg-pink-100 z-50 overflow-y-auto">
       <Button className="w-fit absolute top-4 left-3 h-fit" onClick={close}>
@@ -173,7 +232,7 @@ export function AddProduct({ close }: { close: () => void }) {
                       placeholder="Name"
                       type="text"
                       className="w-full px-4 h-12 border-basePrimary bg-baseTertiary/10 rounded-md "
-                      {...field}
+                      {...form.register("name")}
                     />
                   </FormControl>
                   <FormMessage />
@@ -189,7 +248,15 @@ export function AddProduct({ close }: { close: () => void }) {
                     <ReactSelect
                       placeHolder="Select a Category"
                       options={categoriyList}
-                      bgColor="#fdbada"
+                      defaultValue={
+                        product
+                          ? {
+                              value: product?.category?.id,
+                              label: product?.category?.name,
+                            }
+                          : ""
+                      }
+                      bgColor="#8d0b931a"
                       height="48px"
                       borderColor="#FF057C"
                       {...field}
@@ -209,7 +276,7 @@ export function AddProduct({ close }: { close: () => void }) {
                       placeholder="0"
                       type="number"
                       className="w-full px-4 h-12 border-basePrimary bg-baseTertiary/10 rounded-md "
-                      {...field}
+                      {...form.register("price")}
                     />
                   </FormControl>
                   <FormMessage />
@@ -225,9 +292,9 @@ export function AddProduct({ close }: { close: () => void }) {
                     <Input
                       defaultValue={0}
                       placeholder="0"
-                      type="price"
+                      type="number"
                       className="w-full px-4 h-12 border-basePrimary bg-baseTertiary/10 rounded-md "
-                      {...field}
+                      {...form.register("discount")}
                     />
                   </FormControl>
                   <FormMessage />
@@ -235,13 +302,21 @@ export function AddProduct({ close }: { close: () => void }) {
               )}
             />
 
-            <TextEditor
-              onChange={(value) => form.setValue("description", value)}
-            />
+            <div className="w-full space-y-3">
+              <TextEditor
+                defaultValue={product?.description ?? ""}
+                onChange={(value) => form.setValue("description", value)}
+              />
+              {form.formState.errors.description?.message && (
+                <p className="text-sm font-medium text-red-500">
+                  {form.formState.errors.description?.message}
+                </p>
+              )}
+            </div>
 
             <Button
               type="submit"
-              className="mt-3 h-12 bg-basePrimary text-white "
+              className="mt-3 h-12 w-full bg-basePrimary text-white "
             >
               Add Product
             </Button>
