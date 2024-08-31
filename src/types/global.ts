@@ -10,6 +10,6 @@ export interface TProduct {
     name: string;
     category: TCategory;
     id: string;
-    discounPrice: number;
+    discount: number;
     description: string;
 }

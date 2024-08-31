@@ -125,5 +125,43 @@ body {
 .review-slider .slick-prev {
   left: 37% !important;
   top:110% !important;
+  
 }
+}
+
+.description-input {
+    width: 100%;
+/* border-radius: 8px; */
+}
+
+.description-input .quill .ql-editor {
+height: 100%;
+}
+
+.description-input .quill > .ql-container > .ql-editor.ql-blank::before {
+color: #d4d4d4;
+}
+
+.description-input .ql-container.ql-snow {
+border: 1px solid #f3f3f3 !important;
+height: 13rem;
+border-top: none;
+font-size: 14px;
+border-radius: 0px 0px 8px 8px;
+}
+
+.description-input .ql-toolbar.ql-snow {
+border-radius: 8px 8px 0px 0px;
+border: 1px solid #f3f3f3 !important;
+background: #fdbada;
+}
+
+.description-input .ql-editor.ql-blank::before {
+color: rgba(0, 0, 0, 0.6);
+content: attr(data-placeholder);
+font-size: 14px;
+left: 15px;
+pointer-events: none;
+position: absolute;
+right: 15px;
 }

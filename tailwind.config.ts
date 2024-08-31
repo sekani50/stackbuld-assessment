@@ -12,6 +12,7 @@ const config: Config = {
         basePrimary: "#FF057C",
         baseSecondary: "#321575",
         baseTertiary: "#8D0B93",
+        baseColor: "#FF057C"
       },
       backgroundImage: {
         basePrimary: "linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%)",

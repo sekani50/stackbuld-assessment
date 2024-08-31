@@ -14,7 +14,7 @@ export const productSchema = z.object({
   description: z.string(),
   discount: z.string().min(1, { message: "Discount is required" }),
   category: z.string().min(1, { message: "Category is required" }),
-  image: z.any(),
+  images: z.any(),
 }).refine((data) => {
   const price = parseInt(data.price, 10);
   const discount = parseInt(data.discount, 10);

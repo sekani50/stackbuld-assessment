@@ -75,7 +75,9 @@ export function TopNav() {
           ))}
         </div>
 
-        <Button className="font-medium gap-x-2 text-white bg-basePrimary">
+        <Button 
+        onClick={() => router.push("/admin/dashboard")}
+        className="font-medium gap-x-2 text-white bg-basePrimary">
           <LuPackagePlus size={22}/>
           <p>Admin Products</p>
         </Button>

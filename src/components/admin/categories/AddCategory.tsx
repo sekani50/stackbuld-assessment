@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Form,
   FormField,
@@ -15,9 +17,11 @@ import Image from "next/image";
 import { nanoid } from "nanoid";
 import useCategoryStore from "@/store/globalCategoryStore";
 import { LuImagePlus } from "react-icons/lu";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
-export function AddCategory({ close }: { close: () => void }) {
+import toast from "react-hot-toast";
+import { TCategory } from "@/types";
+export function AddCategory({ close, category }: {category?: TCategory, close: () => void }) {
   const { categories, setCategories } = useCategoryStore(); // Use the global category store
   const form = useForm<z.infer<typeof categorySchema>>({
     resolver: zodResolver(categorySchema),
@@ -28,7 +32,10 @@ export function AddCategory({ close }: { close: () => void }) {
 
   async function onSubmit(values: z.infer<typeof categorySchema>) {
     // Add your form submission logic here
-
+    if (!values.image) {
+        toast.error("Please select an image for the category.");
+        return ;
+    }
     const image = await new Promise((resolve) => {
       if (typeof values.image === "string") {
         resolve(values.image);
@@ -37,13 +44,28 @@ export function AddCategory({ close }: { close: () => void }) {
         reader.onloadend = () => {
           resolve(reader.result as string);
         };
-        reader.readAsDataURL(values.image);
+        reader.readAsDataURL(values.image[0]);
       }
     });
 
     // Add category to the global category store
     if (categories !== null) {
+     if (category && category.id) {
+      // update category
+      setCategories(categories.map((cat) => {
+        if (cat.id === category.id) {
+          return {
+            name: values.name,
+            image: image as string,
+            id: cat.id
+          }
+        }
+        return cat
+      }))
+     }
+     else {
       setCategories([...categories, { ...values, image: image as string }]);
+     }
     } else {
       setCategories([{ ...values, image: image as string }]);
     }
@@ -67,8 +89,17 @@ export function AddCategory({ close }: { close: () => void }) {
       return null;
     }
   }, [addedImage]);
+
+  // Update the form values when a category is provided
+  useEffect(() => {
+if (category) {
+  form.setValue("id", category.id);
+  form.setValue("name", category.name);
+  form.setValue("image", category.image);
+}
+  },[category])
   return (
-    <div className="w-full fixed inset-0 bg-baseTertiary/10 z-50">
+    <div className="w-full fixed inset-0  bg-pink-100 z-50">
       <Button className="w-fit absolute top-4 left-3 h-fit" onClick={close}>
         <IoReturnUpBack size={22} />
       </Button>
@@ -78,9 +109,9 @@ export function AddCategory({ close }: { close: () => void }) {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="w-full flex items-start flex-col justify-start"
+            className="w-full gap-y-3 flex items-start flex-col justify-start"
           >
-            <div className="w-full rounded-lg p-4 bg-basePrimary bg-opacity-80 h-56 flex items-center justify-center relative">
+            <div className="w-full  rounded-lg p-4 bg-basePrimary bg-opacity-80 h-56 flex items-center justify-center relative">
               <div className="w-full h-full bg-white/40 absolute inset-0"></div>
               {categoryImage && (
                 <Image
@@ -121,15 +152,15 @@ export function AddCategory({ close }: { close: () => void }) {
                     <Input
                       placeholder="Name"
                       type="text"
-                      className="w-full px-4 h-11 bg-baseTertiary/10 rounded-md "
-                      {...field}
+                      className="w-full px-4 h-12 bg-baseTertiary/10 border-basePrimary rounded-md "
+                      {...form.register("name")}
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="mt-3 bg-basePrimary text-white ">
+            <Button type="submit" className="mt-3 font-medium w-full h-12 bg-basePrimary text-white ">
               Add Category
             </Button>
           </form>

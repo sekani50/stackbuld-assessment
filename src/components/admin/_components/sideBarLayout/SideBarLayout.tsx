@@ -78,9 +78,9 @@ function SideNavs({ close, isNav }: { close: () => void; isNav: boolean }) {
         }}
         className="  flex flex-col  border-r bg-basePrimary relative overflow-y-auto items-center h-full w-[200px] sm:w-[250px] cursor-pointer   text-mobile"
       >
-        <div className=" bg-basePrimary p-3 h-fit mt-2 w-full">
+        <div className=" p-3 h-fit mt-2 w-full">
           <div className="flex   flex-col mb-10 items-center w-full justify-center">
-            <ul className="flex flex-col gap-y-1 items-start justify-start w-full">
+            <ul className="flex flex-col gap-y-2 items-start justify-start w-full">
               {navLinks.map(({ link, name, icon: Icon }, index) => {
                 return (
                   <li key={index} className="w-full">
@@ -90,7 +90,7 @@ function SideNavs({ close, isNav }: { close: () => void; isNav: boolean }) {
                       className={cn(
                         "px-3 py-2 flex text-white rounded-md gap-x-2 items-center  w-full",
                         pathname === String(link) &&
-                          "font-medium bg-basePrimary gradient-text bg-white"
+                          "font-medium  text-baseColor bg-white"
                       )}
                     >
                       <Icon size={22} />
