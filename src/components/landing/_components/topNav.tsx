@@ -13,11 +13,12 @@ import {
 } from "next/navigation";
 import { useState } from "react";
 import { CgMenuRight } from "react-icons/cg";
+import useCategoryStore from "@/store/globalCategoryStore";
 
 export function TopNav() {
   const pathname = usePathname();
   const params = useSearchParams();
- 
+ const {categories} = useCategoryStore()
   const router = useRouter();
   const [isMobileSideBar, setMobileSideBar] = useState(false);
   const ref = params.get("ref");
@@ -91,14 +92,15 @@ export function TopNav() {
       </header>
       <div className="w-full bg-black  text-white inset-x-0 sticky z-[100] top-[3.8rem]  px-3 sm:px-6 xl:px-8  py-3">
        <div className="w-full overflow-x-auto flex items-center justify-start gap-x-12 no-scrollbar">
-       {otherLink.map(({ name, link }) => (
+        <Link href="/" className="text-white hover:border-b border-white py-1">Shop</Link>
+       {Array.isArray(categories) && categories.map(({ name, id}) => (
           <Link
             key={name}
             className={cn(
               "min-w-max text-white py-1 hover:border-b  border-white transition-all duration-300 transform",
-              pathname === link && "font-medium"
+              pathname.includes(`/category/${id}`) && "font-medium"
             )}
-            href={link}
+            href={`/category/${id}`}
           >
             {name}
           </Link>

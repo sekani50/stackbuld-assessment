@@ -5,7 +5,9 @@ import { FaSquareXTwitter, FaFacebook } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
+import useCategoryStore from "@/store/globalCategoryStore";
 export function Footer() {
+  const {categories} = useCategoryStore();
   const socialLinks = [
     { link: "https://www.instagram.com", Icon: RiInstagramFill },
     { link: "https://web.facebook.com", Icon: FaFacebook },
@@ -33,9 +35,12 @@ export function Footer() {
             Categories
           </p>
           <ul className="list-disc pl-6 grid grid-cols-1 gap-y-5">
-            {otherLink.map(({ name, link }, index) => (
+          <li>
+              <Link href={"/shop"}>Shop</Link>
+            </li>
+            {Array.isArray(categories)  && categories.map(({ name,id  }, index) => (
               <li key={index}>
-                <Link href={link}>{name}</Link>
+                <Link href={`/category/${id}`}>{name}</Link>
               </li>
             ))}
           </ul>
