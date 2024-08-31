@@ -7,7 +7,6 @@ import Link from "next/link";
 import {
   usePathname,
   useRouter,
-  useSearchParams,
 } from "next/navigation";
 import { useState } from "react";
 import { CgMenuRight } from "react-icons/cg";
@@ -15,11 +14,10 @@ import useCategoryStore from "@/store/globalCategoryStore";
 
 export function TopNav() {
   const pathname = usePathname();
-  const params = useSearchParams();
  const {categories} = useCategoryStore()
   const router = useRouter();
   const [isMobileSideBar, setMobileSideBar] = useState(false);
-  const ref = params.get("ref");
+
 
   function onClose() {
     setMobileSideBar((prev) => !prev);
@@ -36,17 +34,11 @@ export function TopNav() {
     },
     {
       name: "Special Deals",
-      link: "/deals",
+      link: "/products?q=Special Deals",
     },
    
   ];
-  const otherLink = [
-    { name: "Shop", link: "/" },
-    { name: "Computers", link: "/" },
-    { name: "SmartPhones", link: "/" },
-    { name: "Electronics", link: "/" },
-
-  ];
+ 
   return (
     <>
       <header className="w-full flex py-3 px-3  z-[100] border-b bg-white  sticky top-0  inset-x-0 sm:px-6 xl:px-8 items-center justify-between ">
@@ -91,14 +83,14 @@ export function TopNav() {
       <div className="w-full bg-black  text-white inset-x-0 sticky z-[100] top-[3.8rem]  px-3 sm:px-6 xl:px-8  py-3">
        <div className="w-full overflow-x-auto flex items-center justify-start gap-x-12 no-scrollbar">
         <Link href="/" className="text-white hover:border-b border-white py-1">Shop</Link>
-       {Array.isArray(categories) && categories.map(({ name, id}) => (
+       {Array.isArray(categories) && categories.map(({ name,image, id}) => (
           <Link
             key={name}
             className={cn(
               "min-w-max text-white py-1 hover:border-b  border-white transition-all duration-300 transform",
               pathname.includes(`/category/${id}`) && "font-medium"
             )}
-            href={`/category/${id}`}
+            href={`/category/${id}?category=${name}`}
           >
             {name}
           </Link>
@@ -130,8 +122,7 @@ function MobileSideNav({
   id?: number;
 }) {
   const router = useRouter();
-  const params = useSearchParams();
-  const ref = params.get("ref");
+
   return (
     <div
       role="button"

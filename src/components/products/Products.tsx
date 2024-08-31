@@ -140,6 +140,7 @@ export default function Products() {
             {Array.isArray(filteredProducts) &&
               filteredProducts.map((product) => (
                 <div
+                key={product.id}
                   role="button"
                   onClick={() => router.push(`/admin/product/${product.id}`)}
                   className="w-full group flex flex-col shadow items-start justify-start"

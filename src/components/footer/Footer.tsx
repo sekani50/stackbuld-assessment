@@ -38,9 +38,9 @@ export function Footer() {
           <li>
               <Link href={"/shop"}>Shop</Link>
             </li>
-            {Array.isArray(categories)  && categories.map(({ name,id  }, index) => (
+            {Array.isArray(categories)  && categories.map(({ name,image,id  }, index) => (
               <li key={index}>
-                <Link href={`/category/${id}`}>{name}</Link>
+                <Link href={`/category/${id}?category=${name}`}>{name}</Link>
               </li>
             ))}
           </ul>
@@ -50,11 +50,11 @@ export function Footer() {
           <p className="font-semibold text-base sm:text-xl mb-2">Explore</p>
           <ul className="list-disc pl-6 grid grid-cols-1 gap-y-5">
             <li>
-              <Link href={"/shop"}>Shop</Link>
+              <Link href={"/"}>Shop</Link>
             </li>
            
             <li>
-              <Link href={"/deals"}>Special Deals</Link>
+              <Link href={"/products?q=Special Deals"}>Special Deals</Link>
             </li>
 
             <li>
@@ -99,38 +99,3 @@ export function Footer() {
   );
 }
 
-/**
-  <p>
-          {" "}
-          <strong> Disclaimer</strong>
-        </p>
-        <p className="w-full">
-          Futures, stocks, and spot currency trading carry significant potential
-          rewards but also substantial risks. You must be aware of these risks
-          and be willing to accept them in order to invest in the futures,
-          stocks, commodities, and forex markets. Do not trade with money you
-          cannot afford to lose. This website is neither a solicitation nor an
-          offer to buy/sell futures, stocks, commodities, or forex. No
-          representation is being made that any account will or is likely to
-          achieve profits or losses similar to those discussed on this website.
-          Past performance of indicators or methodologies is not necessarily
-          indicative of future results.
-        </p>
-        <p>
-          <strong>CFTC Rule 4.41 –</strong> Hypothetical or simulated
-          performance results have certain limitations. Unlike an actual
-          performance record, simulated results do not represent actual trading.
-          Also, since the trades have not been executed, the results may have
-          under- or over-compensated for the impact, if any, of certain market
-          factors, such as lack of liquidity. No representation is being made
-          that any account will or is likely to achieve profit or losses similar
-          to those shown.
-        </p>
-        <p>
-          <strong> Testimonial Disclosure: </strong>
-          Testimonials appearing on Astra Dynamics may not be representative of
-          the experience of other clients or customers and are not a guarantee
-          of future performance or success.
-        </p>
-
- */
