@@ -11,7 +11,7 @@ export function ScrollableCards({ children }: { children: React.ReactNode }) {
 			<button
 				className={
 					isPrevious
-						? "absolute z-[20] w-fit h-fit cursor-pointer p-1 rounded-full hidden sm:block left-[15px] text-black top-[35%] z-1 bg-white transition-all duration-700 ease-in select-none "
+						? "absolute z-[20] w-fit h-fit cursor-pointer p-1 rounded-full block left-[0px] sm:left-[15px] text-white top-[35%] z-1 bg-black/50 transition-all duration-700 ease-in select-none "
 						: "hidden"
 				}
 				onClick={previous}
@@ -21,7 +21,7 @@ export function ScrollableCards({ children }: { children: React.ReactNode }) {
 			<div
 				className={
 					isNext
-						? "absolute w-fit z-[20] h-fit cursor-pointer p-1 hidden sm:block right-[7px] text-black top-[35%] z-1 bg-white transition-all duration-700 ease-in select-none rounded-full "
+						? "absolute w-fit z-[20] h-fit cursor-pointer p-1 block right-[-6px] sm:right-[7px] text-white top-[35%] z-1 bg-black/50 transition-all duration-700 ease-in select-none rounded-full "
 						: "hidden"
 				}
 				onClick={next}

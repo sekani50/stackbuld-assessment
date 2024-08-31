@@ -3,10 +3,8 @@
 import { Button, Input } from "@/components/ui";
 import { cn } from "@/lib";
 import { LuPackagePlus } from "react-icons/lu";
-import Image from "next/image";
 import Link from "next/link";
 import {
-  useParams,
   usePathname,
   useRouter,
   useSearchParams,
@@ -78,7 +76,7 @@ export function TopNav() {
 
         <Button 
         onClick={() => router.push("/admin/dashboard")}
-        className="font-medium gap-x-2 text-white bg-basePrimary">
+        className="font-medium hidden sm:flex gap-x-2 text-white bg-basePrimary">
           <LuPackagePlus size={22}/>
           <p>Admin Products</p>
         </Button>
@@ -144,7 +142,7 @@ function MobileSideNav({
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="absolute modal swipeIn top-0 right-0 w-[200px] h-full gap-y-4 bg-[#FFF5D4] px-4 py-6 flex flex-col items-start justify-start "
+        className="absolute modal swipeIn top-0 right-0 w-[200px] h-full gap-y-4 bg-white px-4 py-6 flex flex-col items-start justify-start "
       >
         {links.map(({ name, link }) => (
           <div className="w-full">
@@ -160,6 +158,14 @@ function MobileSideNav({
             </Link>
           </div>
         ))}
+
+
+<Button 
+        onClick={() => router.push("/admin/dashboard")}
+        className="font-medium sm:hidden flex gap-x-2 text-white bg-basePrimary">
+          <LuPackagePlus size={22}/>
+          <p>Admin Products</p>
+        </Button>
       
       </div>
     </div>
