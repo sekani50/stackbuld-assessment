@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { cn } from "@/lib"
 
-export function ProductWidget({product}:{product: TProduct}) {
+export function ProductWidget({product, className}:{className?:string; product: TProduct}) {
     const router = useRouter()
     return (
         <div
         role="button"
         onClick={() => router.push(`/admin/product/${product.id}`)}
-        className="w-[200px] sm:w-[280px] group flex flex-col shadow items-start justify-start"
+        className={cn("w-[200px] sm:w-[280px] group flex flex-col shadow items-start justify-start", className)}
       >
         <div className="w-full rounded-t-lg h-[12rem] sm:h-[15rem] relative">
         <Image
