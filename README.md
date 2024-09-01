@@ -1,3 +1,16 @@
+
+## Project Overview
+
+This platform serves as a technical assessment to demonstrate proficiency in Next.js, TypeScript, and Tailwind CSS. The application offers basic E-commerce functionality with a focus on product management and filtering capabilities. The project was built with an emphasis on clean code, performance, and user experience.
+
+## Features
+
+- Product Listing: View all products with options to filter by category and price range.
+- Product Details: View detailed information about individual products.
+- Add/Edit/Delete Products: Users/Admin can manage the product list by adding, editing, or deleting products.
+- SEO Compliance: Dynamic generation of SEO content, including meta tags.
+- Responsive Design: The UI is fully responsive and optimized for mobile devices.
+
 This is a [Next.js](https://nextjs.org/) and [Tailwindcss](https://tailwindcss.com) project and uses `npm` as its package manager.
 
 ## Getting Started
@@ -32,6 +45,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 js.org/docs/deployment) for more details.
 
 ## Product
+
 Each product in this project has the following attributes:
 
 - ID: Unique ID for the product
@@ -44,6 +58,15 @@ Each product in this project has the following attributes:
 
 
 These attributes are essential for displaying product information in the application and can be used for filtering and sorting within the UI.
+
+## Categories
+
+Each product is associated with a category:
+
+- ID: Unique ID for the category
+- Name: The category name.
+- Image: Visual representation of the category.
+
 
 
 
