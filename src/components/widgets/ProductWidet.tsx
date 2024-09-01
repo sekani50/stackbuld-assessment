@@ -10,7 +10,7 @@ export function ProductWidget({product, className}:{className?:string; product: 
     return (
         <div
         role="button"
-        onClick={() => router.push(`/admin/product/${product.id}`)}
+        onClick={() => router.push(`/products/${product.id}`)}
         className={cn("w-[200px] sm:w-[280px] group flex flex-col shadow items-start justify-start", className)}
       >
         <div className="w-full rounded-t-lg h-[12rem] sm:h-[15rem] relative">

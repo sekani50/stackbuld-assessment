@@ -18,12 +18,19 @@ export default function About() {
         />
       </div>
       <div className="w-full mx-auto my-8 sm:my-16 px-4 max-w-4xl leading-8">
-        <strong>Stack Shop</strong> 
+        <strong className="text-base sm:text-xl">Stack Shop</strong> lorem ipsum
+        dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+        id est laborum.
+
+
       </div>
 
-      <div className="w-full mx-auto my-8 sm:my-16 px-4 max-w-4xl">
       
-      </div>
     </div>
   );
 }

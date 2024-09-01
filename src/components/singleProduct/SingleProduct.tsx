@@ -3,35 +3,25 @@
 import useProductStore from "@/store/globalProductStore";
 import { cn } from "@/lib";
 import { Button } from "@/components/ui";
-import { BiSolidEdit } from "react-icons/bi";
-import { useState } from "react";
-import { AddProduct } from "./AddProduct";
-import { ProductImages } from "../_components/ProductImage";
-export default function ProductDetail({ id }: { id: string }) {
-  const [isOpen, setIsOpen] = useState(false);
+import { FaOpencart } from "react-icons/fa6";
+
+import { ProductImages } from "../admin/_components/ProductImage";
+export default function SingleProduct({ id }: { id: string }) {
+
   const { products } = useProductStore();
 
   if (!products) return;
   const product = products.find((p) => p.id === id);
 
-  function toggleModal() {
-    setIsOpen((p) => !p);
-  }
+
   return (
-    <div className="w-full mx-auto ">
-      <div className="w-full flex items-end justify-end mb-3 sm:mb-5">
-        <Button 
-        onClick={toggleModal}
-        className="text-baseColor">
-          <BiSolidEdit size={20} />
-          <p>Edit Product</p>
-        </Button>
-      </div>
+    <div className="w-full p-4 sm:p-6 mx-auto">
+     
       <div className="w-full grid gap-4 grid-cols-1 sm:grid-cols-7">
         <div className="w-full md:col-span-4">
           {product?.images &&  <ProductImages images={product?.images}/>}
         </div>
-        <div className="w-full flex flex-col items-start justify-start gap-y-4 sm:gap-y-6 md:col-span-3">
+        <div className="w-full flex flex-col items-start justify-start gap-y-4 sm:gap-y-6 md:col-span-2">
           <p className="font-semibold text-base sm:text-xl">
             {product?.name ?? ""}
           </p>
@@ -58,6 +48,10 @@ export default function ProductDetail({ id }: { id: string }) {
             <p className="capitalize">{product?.category?.name ?? ""}</p>
   
         </div>
+
+        <Button className="h-12 bg-basePrimary w-full gap-x-2 text-white font-medium">
+            <FaOpencart size={22}/>
+            <p>Buy Now</p></Button>
         
         </div>
       </div>
@@ -71,7 +65,7 @@ export default function ProductDetail({ id }: { id: string }) {
         />
       </div>
 
-      {isOpen  && <AddProduct close={toggleModal} product={product}/>}
+      
     </div>
 
     

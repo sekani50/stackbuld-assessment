@@ -50,7 +50,7 @@ export function TopNav() {
 
         <Input
           className="w-[60%] sm:w-96 h-11  rounded-lg placeholder:text-gray-500 bg-[#FF057C]/10"
-          placeholder="Search for Indicators"
+          placeholder="Search for Products"
         />
 
         <div className="hidden sm:flex items-center gap-x-8">

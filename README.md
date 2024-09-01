@@ -14,29 +14,8 @@ then start the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Branching strategy
-
-This project uses a [Feature Branching](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) strategy. This means that all new features are developed on a separate branch and merged into the `main` branch once they are ready to be deployed.
-
-### Branch naming
-
-Branches should be named using the following convention:
-
-`feature/feature-name`  
-`hotfix/hotfix-name`
-
-## Commit messages
-
-Commit messages should be written in the imperative mood, e.g. "Fix bug" and not "Fixed bug" or "Fixes bug".
-
-## Pull requests
-
-Pull requests should be named using the following convention:
-
-`[feature/bug/chore/hotfix] feature-name`
+Open [http://localhost:4009](http://localhost:3000) with your browser to see the result.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Montesserat, a custom Google Font.
 
 ## Learn More
 
@@ -52,14 +31,21 @@ To learn more about Next.js, take a look at the following resources:
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 js.org/docs/deployment) for more details.
 
-## Product Details
+## Product
 Each product in this project has the following attributes:
 
-Name: The name of the product.
-Category: The category to which the product belongs.
-Images: Visual representation of the product.
-Price: The original price of the product.
-Discount Price: A reduced price, if applicable.
-Description: About the product
+- ID: Unique ID for the product
+- Name: The name of the product.
+- Category: The category to which the product belongs.
+- Images: Visual representation of the product.
+- Price: The original price of the product.
+- Discount Price: A reduced price, if applicable.
+- Description: About the product
+
+
 These attributes are essential for displaying product information in the application and can be used for filtering and sorting within the UI.
+
+
+
+
 

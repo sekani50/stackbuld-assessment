@@ -9,7 +9,7 @@ export function ProductImages({images}:{images:string[]}) {
   return (
     <div className="w-full flex flex-col items-start justify-start gap-y-4">
       <Image
-        className="w-full rounded-lg h-[20rem] sm:h-[20rem]"
+        className="w-full rounded-lg h-[20rem] sm:h-[35rem]"
         src={images[currentImage]}
         alt="product"
         width={900}

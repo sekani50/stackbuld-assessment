@@ -142,7 +142,7 @@ export default function Products() {
                 <div
                 key={product.id}
                   role="button"
-                  onClick={() => router.push(`/admin/product/${product.id}`)}
+                  onClick={() => router.push(`/products/${product.id}`)}
                   className="w-full group flex flex-col shadow items-start justify-start"
                 >
                   <div className="w-full rounded-t-lg h-[12rem] sm:h-[17rem] relative">

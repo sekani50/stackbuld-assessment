@@ -26,7 +26,7 @@ export default function Singlecategory({ id }: { id: string }) {
     } else {
       return [];
     }
-  }, [id]);
+  }, [id, products]);
 
   // Filter products based on selected categories and price range
   const filteredProducts = useMemo(() => {
@@ -48,14 +48,14 @@ export default function Singlecategory({ id }: { id: string }) {
   return (
     <div className="w-full ">
       <div className="w-full relative h-[10rem] sm:h-[13rem]">
-        <div className="w-full m-auto inset-0 h-full bg-black/30 absolute flex items-center justify-center">
-          <h2 className="font-semibold text-lg sm:text-3xl text-white">
+        <div className="w-full m-auto inset-0 h-full bg-black/40 absolute flex items-center justify-center">
+          <h2 className="font-semibold text-xl sm:text-4xl text-white">
             {category ?? ""}
           </h2>
         </div>
         <Image
           src={categoryData?.image ?? ""}
-          className="h-[10rem] sm:h-[13rem] w-full"
+          className="h-[10rem] object-cover sm:h-[13rem] w-full"
           alt="category"
           width={1800}
           height={400}
@@ -84,11 +84,11 @@ export default function Singlecategory({ id }: { id: string }) {
           </div>
         </div>
 
-        {Array.isArray(filteredProducts) && filteredProducts.length === 0 && (
+        {/* {Array.isArray(filteredProducts) && filteredProducts.length === 0 && (
           <div className="w-full flex items-center justify-center h-[20rem]">
             <h1 className="font-semibold text-xl sm:text-2xl">No Product</h1>
           </div>
-        )}
+        )} */}
         <div className="w-full grid grid-cols-2 pb-6 sm:pb-10 gap-3 md:col-span-3 lg:gap-5 lg:grid-cols-4">
           {Array.isArray(filteredProducts) &&
             filteredProducts.length > 0 &&
@@ -96,7 +96,7 @@ export default function Singlecategory({ id }: { id: string }) {
               <div
                 key={product.id}
                 role="button"
-                onClick={() => router.push(`/admin/product/${product.id}`)}
+                onClick={() => router.push(`/products/${product.id}`)}
                 className="w-full group flex flex-col shadow items-start justify-start"
               >
                 <div className="w-full rounded-t-lg h-[12rem] sm:h-[17rem] relative">
