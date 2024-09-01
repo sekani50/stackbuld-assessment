@@ -6,8 +6,6 @@ export async function getRequest<T>({ endpoint }: { endpoint: string }) {
       : "";
 
     const url = `${baseUrl}/api${endpoint}`; 
-    
-  
     const response = await fetch(url, {
       method: 'GET',
       headers: {
