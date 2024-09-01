@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname} from "next/navigation";
 import { cn } from "@/lib";
+import { GrStorage } from "react-icons/gr";
 
 import { Button } from "@/components/ui";
 import { CgMenuLeft } from "react-icons/cg";
@@ -76,7 +77,7 @@ function SideNavs({ close, isNav }: { close: () => void; isNav: boolean }) {
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="  flex flex-col  border-r bg-basePrimary relative overflow-y-auto items-center h-full w-[200px] sm:w-[250px] cursor-pointer   text-mobile"
+        className="  flex flex-col border-r bg-basePrimary relative overflow-y-auto items-center h-full w-[200px] sm:w-[250px] cursor-pointer   text-mobile"
       >
         <div className=" p-3 h-fit mt-2 w-full">
           <div className="flex   flex-col mb-10 items-center w-full justify-center">
@@ -103,6 +104,16 @@ function SideNavs({ close, isNav }: { close: () => void; isNav: boolean }) {
           </div>
         </div>
        
+      <div className="px-3 absolute inset-x-0 bottom-20 w-full">
+      <Button
+      onClick={() => {
+        localStorage.clear()
+        window.open('/', '_self')
+      }}
+      className="text-baseSecondary h-10 gap-x-2 items-center justify-start font-medium bg-white w-full ">
+        <GrStorage size={22}/>
+        Clear Storage</Button>
+      </div>
       </div>
     </div>
   );

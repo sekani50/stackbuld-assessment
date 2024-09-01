@@ -13,3 +13,8 @@ export interface TProduct {
     discount: number;
     description: string;
 }
+
+export type TResponse = {
+    categories: TCategory[];
+    products: TProduct[];
+}

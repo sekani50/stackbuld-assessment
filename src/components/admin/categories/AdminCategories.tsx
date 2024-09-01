@@ -45,8 +45,8 @@ export default function AdminCategories() {
           </div>
         }
       {/* Handle Empty Category */}
-      {(Array.isArray(categories) && categories.length === 0) ||
-        (categories === null && (
+      {categories === null  || (Array.isArray(categories) && categories.length === 0) 
+        && (
           <div className="w-full flex flex-col gap-y-5 items-center justify-center h-[40rem]">
             <h2 className="font-semibold text-base sm:text-xl bg-basePrimary gradient-text">
               No categories has been added yet
@@ -59,7 +59,7 @@ export default function AdminCategories() {
               <p>Add Category</p>
             </Button>
           </div>
-        ))}
+        )}
 
       {/* Render Categories */}
       {Array.isArray(categories) && categories.length > 0 && (

@@ -43,7 +43,7 @@ export default function AdminProducts() {
         </div>
       )}
       {/* Handle Empty Product */}
-      {(Array.isArray(products) && products.length === 0 ) || products === null && (
+      { products === null || (Array.isArray(products) && products.length === 0 ) && (
         <div className="w-full flex flex-col gap-y-5 items-center justify-center h-[40rem]">
           <h2 className="font-semibold text-base sm:text-xl bg-basePrimary gradient-text">
             No product has been added yet
