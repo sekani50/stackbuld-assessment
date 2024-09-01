@@ -8,17 +8,22 @@ import { AddCategory } from "./AddCategory";
 import Image from "next/image";
 import { EditCategory } from "../_components/actions/EditCategory";
 import { Deletes } from "../_components/actions/Deletes";
+import useProductStore from "@/store/globalProductStore";
 export default function AdminCategories() {
   const { categories, setCategories } = useCategoryStore(); // Get categories from global store
   const [isOpen, setOpen] = useState(false); // Add category modal state
+  const {products, setProducts} = useProductStore(); // Get products from global store
 
   function handleOpenModal() {
     setOpen((p) => !p); // Toggle modal state
   }
 
   function deleteCategory(id:string) {
+    // Delete category from the store 
     if (categories) {
         setCategories(categories?.filter((cat) => cat.id !== id))
+        // Delete products belonging to the deleted category
+        if (products) setProducts(products?.filter((product) => product.category.id !== id))
     }
     
   }
