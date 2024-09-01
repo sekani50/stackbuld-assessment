@@ -59,7 +59,7 @@ export default function SingleProduct({ id }: { id: string }) {
       <div className="w-full grid grid-cols-1 mt-6 sm:mt-12 gap-y-4 sm:gap-y-8">
         <h2 className="font-semibold text-base sm:text-xl">Description</h2>
 
-        <p
+        <div
           className="description-innerhtml"
           dangerouslySetInnerHTML={{ __html: product?.description ?? "" }}
         />

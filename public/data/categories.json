@@ -1,7 +1,7 @@
 [
-    {"name": "SmartPhones", "image":""},
-    {"name": "Tablets", "image": ""},
-    {"name": "Laptops", "image": ""},
-    {"name": "Headphones", "image": ""},
-    {"name": "Accessories", "image": ""}
+    {"name": "SmartPhones", "image":"https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181246/180177-OWULQ9-94_o8oiai.jpg"},
+    {"name": "Tablets", "image": "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181221/still-life-books-versus-technology_azheqk.jpg"},
+    {"name": "Laptops", "image": "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181220/still-life-books-versus-technology_1_ymiqlw.jpg"},
+    {"name": "Headphones", "image": "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181224/top-view-earphones-music-concept_exoh4t.jpg"},
+    {"name": "Accessories", "image": "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181222/still-life-wireless-cyberpunk-headphones_cgxodm.jpg"}
 ]

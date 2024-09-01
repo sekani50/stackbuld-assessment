@@ -5,7 +5,7 @@ import { TResponse } from "@/types";
 
 export default async function Page() {
   const response =  await getRequest<TResponse>({endpoint:"/request"})
-  console.log(response);
+console.log(response)
   return (
     <div className=" w-full h-full">
       <Landing data={response.data}/>

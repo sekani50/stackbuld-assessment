@@ -112,7 +112,7 @@ function SideNavs({ close, isNav }: { close: () => void; isNav: boolean }) {
       }}
       className="text-baseSecondary h-10 gap-x-2 items-center justify-start font-medium bg-white w-full ">
         <GrStorage size={22}/>
-        Clear Storage</Button>
+        Reset Data</Button>
       </div>
       </div>
     </div>

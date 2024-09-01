@@ -2,7 +2,7 @@
 export async function getRequest<T>({ endpoint }: { endpoint: string }) {
     const isServer = typeof window === "undefined";
     const baseUrl = isServer
-      ? "http://localhost:4009"
+      ? process.env.NEXT_PUBLIC_BASE_URL 
       : "";
 
     const url = `${baseUrl}/api${endpoint}`; 

@@ -1,21 +1,24 @@
 import path from "path";
 import {promises as fs} from "fs";
 import { nanoid } from "nanoid";
-
 import { NextRequest, NextResponse } from "next/server";
 
-      export async function GET(
+export async function GET(
         req: NextRequest) {
       
       
         if (req.method === "GET") {
           try {
     
-            const jsonDirectory = path.join(process.cwd(), 'public');
-            const fileContents = await fs.readFile(jsonDirectory + '/data/categories.json', 'utf8');
-            const data = JSON.parse(fileContents);
+            const jsonDirectory = path.join(process.cwd(), 'public'); // directory path
+            const categoryFileContents = await fs.readFile(jsonDirectory + '/data/categories.json', 'utf8'); // file path
+            const productFileContents = await fs.readFile(jsonDirectory + '/data/products.json', 'utf8'); // file path
+
+            const productData = JSON.parse(productFileContents);
+            const categoryData = JSON.parse(categoryFileContents);
+
           
-             const categories = data.map((c: any) => {
+             const categories = categoryData.map((c: any) => {
                 return {
                  ...c,
                   id: nanoid(),
@@ -23,9 +26,20 @@ import { NextRequest, NextResponse } from "next/server";
             
              })   
 
+             const products = productData.map((p: any) => {
+              return {
+                ...p,
+                
+                category: categories.find((c: any) => c.name.toLowerCase() === p.category.toLowerCase()),
+                id: nanoid()
+              }
+             })
+
+            
+
             return NextResponse.json(
               {
-                data: {categories, products:[]},
+                data: {categories, products},
               },
               {
                 status: 200,
@@ -46,6 +60,6 @@ import { NextRequest, NextResponse } from "next/server";
           return NextResponse.json({ error: "Method not allowed" });
         }
       }
-      
-      export const dynamic = "force-dynamic";
+
+export const dynamic = "force-dynamic";
       

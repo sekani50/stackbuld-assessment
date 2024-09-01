@@ -21,8 +21,10 @@ import { useEffect, useMemo } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { TCategory } from "@/types";
+import useProductStore from "@/store/globalProductStore";
 export function AddCategory({ close, category }: {category?: TCategory, close: () => void }) {
   const { categories, setCategories } = useCategoryStore(); // Use the global category store
+  const {products, setProducts} = useProductStore()
   const form = useForm<z.infer<typeof categorySchema>>({
     resolver: zodResolver(categorySchema),
     defaultValues: {
@@ -62,6 +64,23 @@ export function AddCategory({ close, category }: {category?: TCategory, close: (
         }
         return cat
       }))
+
+      // update product category details
+     if (Array.isArray(products)) {
+      setProducts(products.map((product) => {
+        if (product.category.id === category.id) {
+          return {
+           ...product,
+            category: {
+              name: values.name,
+              image: image as string,
+              id:category.id
+            }
+          }
+        }
+        return product
+      }))
+     }
      }
      else {
       setCategories([...categories, { ...values, image: image as string }]);
