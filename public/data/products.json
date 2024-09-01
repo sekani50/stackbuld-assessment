@@ -2,7 +2,7 @@
     {
       "name": "iPhone 13 Pro",
       "category": "SmartPhones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183706/elegant-smartphone-composition_vgrshy.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183705/elegant-smartphone-composition_1_qfj0il.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183770/3207179_xyyb9l.jpg"],
       "price": 999.99,
       "discount": 899.99,
       "description": "<p>The iPhone 13 Pro features a 6.1-inch Super Retina XDR display with ProMotion technology, A15 Bionic chip, and 5G capability.</p>"
@@ -10,7 +10,7 @@
     {
       "name": "Samsung Galaxy S21",
       "category": "SmartPhones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183708/new-cell-phone-colorful-background_1_thrp2o.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183805/ORH98T0_wkjcls.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183729/OYHL8Y0_phmunz.jpg"],
       "price": 799.99,
       "discount": 699.99,
       "description": "<p>The Samsung Galaxy S21 offers a 6.2-inch Dynamic AMOLED display, Exynos 2100 processor, and a triple camera setup.</p>"
@@ -18,7 +18,7 @@
     {
       "name": "Google Pixel 6",
       "category": "SmartPhones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183748/f3632f3a-f9ae-49d2-bd6b-c61a0af3bbc7_do5ub4.jpg"],
       "price": 599.99,
       "discount": 499.99,
       "description": "<p>The Google Pixel 6 features a 6.4-inch AMOLED display, Google Tensor chip, and an advanced dual-camera system.</p>"
@@ -26,7 +26,7 @@
     {
       "name": "OnePlus 9",
       "category": "SmartPhones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725183748/f3632f3a-f9ae-49d2-bd6b-c61a0af3bbc7_do5ub4.jpg"],
       "price": 729.99,
       "discount": 649.99,
       "description": "<p>The OnePlus 9 comes with a 6.55-inch Fluid AMOLED display, Snapdragon 888 processor, and Hasselblad camera system.</p>"
@@ -34,7 +34,7 @@
     {
       "name": "Sony WH-1000XM4",
       "category": "Headphones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185602/black-headphones-digital-device_nxbu2a.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185208/still-life-wireless-cyberpunk-headphones_flbaju.jpg"],
       "price": 349.99,
       "discount": 299.99,
       "description": "<p>The Sony WH-1000XM4 wireless headphones offer noise cancellation, up to 30 hours of battery life, and superior sound quality.</p>"
@@ -42,7 +42,7 @@
     {
       "name": "Bose QuietComfort 35 II",
       "category": "Headphones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185602/black-headphones-digital-device_nxbu2a.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185208/still-life-wireless-cyberpunk-headphones_flbaju.jpg"],
       "price": 299.99,
       "discount": 249.99,
       "description": "<p>The Bose QuietComfort 35 II provides industry-leading noise cancellation, Alexa voice control, and comfortable ear cushions.</p>"
@@ -50,7 +50,7 @@
     {
       "name": "Apple AirPods Pro",
       "category": "Headphones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185249/wireless-earbuds-with-neon-cyberpunk-style-lighting_m4kunc.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725184845/still-life-wireless-cyberpunk-headphones_2_jiqtni.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725184843/still-life-tech-device_mybo4b.jpg"],
       "price": 249.99,
       "discount": 199.99,
       "description": "<p>The AirPods Pro come with active noise cancellation, a customizable fit, and spatial audio with dynamic head tracking.</p>"
@@ -58,7 +58,7 @@
     {
       "name": "Sennheiser Momentum 3",
       "category": "Headphones",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185602/black-headphones-digital-device_nxbu2a.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185208/still-life-wireless-cyberpunk-headphones_flbaju.jpg"],
       "price": 399.99,
       "discount": 349.99,
       "description": "<p>The Sennheiser Momentum 3 headphones feature noise cancellation, a stylish design, and high-fidelity sound.</p>"
@@ -66,7 +66,7 @@
     {
       "name": "iPad Pro 11-inch",
       "category": "Tablets",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185512/v690-sasi-41a_wqvmeh.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185544/digital-tablet-online-learning_koadme.jpg"],
       "price": 799.99,
       "discount": 749.99,
       "description": "<p>The iPad Pro 11-inch features a Liquid Retina display, M1 chip, and compatibility with Apple Pencil and Magic Keyboard.</p>"
@@ -74,7 +74,7 @@
     {
       "name": "Samsung Galaxy Tab S7",
       "category": "Tablets",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185565/1147_qoewua.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185544/digital-tablet-online-learning_koadme.jpg"],
       "price": 649.99,
       "discount": 599.99,
       "description": "<p>The Galaxy Tab S7 includes an 11-inch LTPS TFT display, Snapdragon 865+ processor, and S Pen functionality.</p>"
@@ -82,7 +82,7 @@
     {
       "name": "Microsoft Surface Pro 7",
       "category": "Tablets",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185544/digital-tablet-online-learning_koadme.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185565/1147_qoewua.jpg"],
       "price": 749.99,
       "discount": 699.99,
       "description": "<p>The Surface Pro 7 is a 2-in-1 device with a 12.3-inch PixelSense display, Intel Core processors, and versatile kickstand.</p>"
@@ -90,7 +90,7 @@
     {
       "name": "Apple iPad Air",
       "category": "Tablets",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185512/v690-sasi-41a_wqvmeh.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185544/digital-tablet-online-learning_koadme.jpg"],
       "price": 599.99,
       "discount": 549.99,
       "description": "<p>The iPad Air offers a 10.9-inch Liquid Retina display, A14 Bionic chip, and compatibility with the Magic Keyboard.</p>"
@@ -98,7 +98,7 @@
     {
       "name": "MacBook Air M1",
       "category": "Laptops",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185495/4e9b8776-6a5f-45a3-810d-310a0e6fde83_j6xqcr.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185475/laptop-sofa_hzaejb.jpg"],
       "price": 999.99,
       "discount": 899.99,
       "description": "<p>The MacBook Air M1 features a 13.3-inch Retina display, Apple M1 chip, and up to 18 hours of battery life.</p>"
@@ -106,7 +106,7 @@
     {
       "name": "Dell XPS 13",
       "category": "Laptops",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185475/laptop-sofa_hzaejb.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181220/still-life-books-versus-technology_1_ymiqlw.jpg"],
       "price": 1199.99,
       "discount": 1099.99,
       "description": "<p>The Dell XPS 13 offers a 13.4-inch InfinityEdge display, Intel Core i7 processor, and a sleek aluminum chassis.</p>"
@@ -114,7 +114,7 @@
     {
       "name": "HP Spectre x360",
       "category": "Laptops",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725181220/still-life-books-versus-technology_1_ymiqlw.jpg","https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725185475/laptop-sofa_hzaejb.jpg"],
       "price": 1299.99,
       "discount": 1199.99,
       "description": "<p>The HP Spectre x360 is a 2-in-1 laptop with a 13.3-inch OLED display, Intel Core i7 processor, and 360-degree hinge.</p>"
@@ -122,7 +122,7 @@
     {
       "name": "Lenovo ThinkPad X1 Carbon",
       "category": "Laptops",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186698/pexels-olenkabohovyk-3550483_olhsir.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186696/pexels-olenkabohovyk-3550482_n5wv7y.jpg"],
       "price": 1499.99,
       "discount": 1399.99,
       "description": "<p>The Lenovo ThinkPad X1 Carbon features a 14-inch display, Intel Core i7 processor, and a durable carbon fiber chassis.</p>"
@@ -130,7 +130,7 @@
     {
       "name": "Logitech MX Master 3",
       "category": "Accessories",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725187392/pexels-zeleboba-1706694_vkfclp.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725187389/pexels-shottrotter-1034653_dcsnsb.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725187390/pexels-tdcat-347700_vn4vbc.jpg"],
       "price": 99.99,
       "discount": 89.99,
       "description": "<p>The Logitech MX Master 3 is an advanced wireless mouse with customizable buttons, ergonomic design, and long battery life.</p>"
@@ -138,7 +138,7 @@
     {
       "name": "Apple Magic Keyboard",
       "category": "Accessories",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186686/pexels-cottonbro-5082563_r7uohu.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186690/pexels-japy-13634298_wxzwwe.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186703/pexels-tranmautritam-370470_hrckbl.jpg"],
       "price": 129.99,
       "discount": 109.99,
       "description": "<p>The Apple Magic Keyboard features a sleek design, scissor mechanism keys, and a built-in rechargeable battery.</p>"
@@ -146,7 +146,7 @@
     {
       "name": "Samsung T7 Portable SSD",
       "category": "Accessories",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186684/pexels-avinash-kumar-299518778-13595074_knookq.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186694/pexels-markusspiske-2644597_m81k5g.jpg"],
       "price": 179.99,
       "discount": 159.99,
       "description": "<p>The Samsung T7 Portable SSD offers fast read/write speeds, a compact design, and up to 2TB of storage capacity.</p>"
@@ -154,7 +154,7 @@
     {
       "name": "Anker PowerCore 10000",
       "category": "Accessories",
-      "images": [],
+      "images": ["https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186700/pexels-screenpost-4526406_c1vhpx.jpg", "https://res.cloudinary.com/dkdrbjfdt/image/upload/v1725186701/pexels-screenpost-10104600_om27bo.jpg"],
       "price": 29.99,
       "discount": 24.99,
       "description": "<p>The Anker PowerCore 10000 is a compact portable charger with a 10000mAh capacity and fast-charging technology.</p>"

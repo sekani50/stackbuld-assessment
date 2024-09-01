@@ -8,7 +8,7 @@ import { GrStorage } from "react-icons/gr";
 
 import { Button } from "@/components/ui";
 import { CgMenuLeft } from "react-icons/cg";
-
+import { TbExternalLink } from "react-icons/tb";
 import { navLinks } from "@/constants/constants";
 
 
@@ -31,7 +31,9 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
             Stack Shop Admin
           </div>
           <div className="flex items-center gap-x-2">
-           <p className="w-1 h-1"></p>
+           <Link href={"/"} className="w-fit h-fit px-0">
+            <TbExternalLink size={22} className="text-baseSecondary"/>
+           </Link>
             <Button
               type="button"
               onClick={onClose}

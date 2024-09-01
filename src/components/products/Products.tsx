@@ -72,7 +72,7 @@ export default function Products() {
             className="fixed inset-0 w-full h-full bg-none z-[48]"></div>
             <div 
             onClick={(e) => e.stopPropagation()}
-            className="w-[160px] h-fit z-50 max-h-[12rem] shadow overflow-y-auto flex flex-col items-start justify-start gap-y-3 relative bg-white rounded-lg py-4 px-2">
+            className="w-[160px] h-fit z-50 max-h-[12rem] shadow overflow-y-auto flex flex-col items-start justify-start gap-y-4 relative bg-white rounded-lg py-4 px-2">
                      {/** product categories */}
           <p className="font-semibold mb-3 text-sm">Categories</p>
 
@@ -88,7 +88,7 @@ export default function Products() {
       }}
       key={category.id}
       htmlFor="category"
-      className="w-full flex items-center gap-x-2"
+      className="w-full flex  items-center gap-x-2"
     >
       <input
         type="checkbox"
@@ -106,7 +106,7 @@ export default function Products() {
         </div>
   
       <div className="w-full  grid grid-cols-1 md:grid-cols-9 ">
-        <div className="px-4 w-full border-r py-4 sm:py-8 hidden md:block md:col-span-2">
+        <div className="px-4 w-full border-r py-4 gap-y-4 md:flex flex-col h-full items-start sm:py-8 hidden overflow-y-auto md:col-span-2">
           {/** product categories */}
           <p className="font-semibold mb-3 text-lg">Categories</p>
 

@@ -87,8 +87,8 @@ export function TopNav() {
           <Link
             key={name}
             className={cn(
-              "min-w-max text-white py-1 hover:border-b  border-white transition-all duration-300 transform",
-              pathname.includes(`/category/${id}`) && "font-medium"
+              "min-w-max text-white p-1 hover:border-b   border-white transition-all duration-300 transform",
+              pathname.includes(`/category/${id}`) && "font-medium border-b"
             )}
             href={`/category/${id}?category=${name}`}
           >
