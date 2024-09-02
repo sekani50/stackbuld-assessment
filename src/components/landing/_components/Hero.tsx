@@ -12,7 +12,7 @@ export function Hero() {
  
   return (
     <>
-      <div className="carousel-container h-[400px] sm:h-[450px] 2xl:h-[560px] relative">
+      <div className="carousel-container h-[400px] sm:h-[500px] 2xl:h-[560px] relative">
         <Carousel
           autoPlay={true}
           interval={6000}
@@ -21,18 +21,18 @@ export function Hero() {
           infiniteLoop={true}
           className="carousel"
         >
-          <div className="w-full h-[400px] sm:h-[450px] 2xl:h-[560px]">
+          <div className="w-full h-[400px] sm:h-[500px] 2xl:h-[560px]">
             <Image
-              className="h-[400px] sm:h-[450px] 2xl:h-[560px] object-cover"
+              className="h-[400px] sm:h-[500px] 2xl:h-[560px] object-cover"
               src="/images/super.jpg"
               alt="image2"
               width={2000}
               height={700}
             />
           </div>
-          <div className="w-full h-[400px] sm:h-[450px] 2xl:h-[560px]">
+          <div className="w-full h-[400px] sm:h-[500px] 2xl:h-[560px]">
             <Image
-              className="h-[400px] sm:h-[450px] 2xl:h-[560px] object-cover"
+              className="h-[400px] sm:h-[500px] 2xl:h-[560px] object-cover"
               src="/images/weekend.jpg"
               alt="image2"
               width={2000}
@@ -40,18 +40,18 @@ export function Hero() {
             />
           </div>
 
-          <div className="w-full h-[400px] sm:h-[450px] 2xl:h-[560px]">
+          <div className="w-full h-[400px] sm:h-[500px] 2xl:h-[560px]">
             <Image
-              className="h-[400px] sm:h-[450px] 2xl:h-[560px] object-cover"
+              className="h-[400px] sm:h-[500px] 2xl:h-[560px] object-cover"
               src="/images/flash.jpg"
               alt="image2"
               width={2000}
               height={700}
             />
           </div>
-          <div className="w-full h-[400px] sm:h-[450px] 2xl:h-[560px]">
+          <div className="w-full h-[400px] sm:h-[500px] 2xl:h-[560px]">
             <Image
-              className="h-[400px] sm:h-[450px] 2xl:h-[560px] object-cover"
+              className="h-[400px] sm:h-[500px] 2xl:h-[560px] object-cover"
               src="/images/christmas.jpg"
               alt="image1"
               width={2000}
