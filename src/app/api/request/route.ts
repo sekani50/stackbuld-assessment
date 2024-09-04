@@ -6,11 +6,11 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   if (req.method === "GET") {
     try {
-      const jsonDirectory = path.join(process.cwd(), "public"); // directory path
+      const jsonDirectory = path.join(process.cwd()); // directory path
       
        // Check and clear cache if it exists
-    const categoriesPath = path.join(jsonDirectory, "/data/categories.json");
-    const productsPath = path.join(jsonDirectory, "/data/products.json");
+    const categoriesPath = path.join(jsonDirectory, "categories.json");
+    const productsPath = path.join(jsonDirectory, "products.json");
 
     if (require.cache[require.resolve(categoriesPath)]) {
       delete require.cache[require.resolve(categoriesPath)];
@@ -28,11 +28,11 @@ export async function GET(req: NextRequest) {
 
       // Read the JSON files
       const categoryFileContents = await fs.readFile(
-        jsonDirectory + "/data/categories.json",
+        jsonDirectory + "categories.json",
         "utf8"
       ); // file path
       const productFileContents = await fs.readFile(
-        jsonDirectory + "/data/products.json",
+        jsonDirectory + "products.json",
         "utf8"
       ); // file path
 
