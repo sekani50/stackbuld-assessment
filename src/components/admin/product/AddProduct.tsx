@@ -28,17 +28,19 @@ import { TProduct } from "@/types";
 
 function ImagesUpload({
   form,
+  productId
 }: {
   form: UseFormReturn<z.infer<typeof productSchema>, any, any>;
+  productId: string | undefined;
 }) {
   const prevImages = form.watch("images")
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
-    if (prevImages && prevImages.length > 0) {
+    if (prevImages && prevImages.length > 0 && productId) {
       setImages(prevImages);
     }
-  },[prevImages])
+  },[prevImages, productId])
   async function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
       const file = e.target.files[0];
@@ -221,7 +223,7 @@ export function AddProduct({
             onSubmit={form.handleSubmit(onSubmit)}
             className="w-full flex gap-y-3 items-start flex-col justify-start"
           >
-            <ImagesUpload form={form} />
+            <ImagesUpload form={form}  productId={product?.id}/>
             <FormField
               control={form.control}
               name="name"
