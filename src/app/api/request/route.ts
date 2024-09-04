@@ -8,13 +8,23 @@ export async function GET(req: NextRequest) {
     try {
       const jsonDirectory = path.join(process.cwd(), "public"); // directory path
       
+       // Check and clear cache if it exists
+    const categoriesPath = path.join(jsonDirectory, "/data/categories.json");
+    const productsPath = path.join(jsonDirectory, "/data/products.json");
+
+    if (require.cache[require.resolve(categoriesPath)]) {
+      delete require.cache[require.resolve(categoriesPath)];
+    }
+    if (require.cache[require.resolve(productsPath)]) {
+      delete require.cache[require.resolve(productsPath)];
+    }
       // Clear the require cache for the JSON files
-      delete require.cache[
-        require.resolve(jsonDirectory + "/data/categories.json")
-      ];
-      delete require.cache[
-        require.resolve(jsonDirectory + "/data/products.json")
-      ];
+      // delete require.cache[
+      //   require.resolve(jsonDirectory + "/data/categories.json")
+      // ];
+      // delete require.cache[
+      //   require.resolve(jsonDirectory + "/data/products.json")
+      // ];
 
       // Read the JSON files
       const categoryFileContents = await fs.readFile(

@@ -74,7 +74,7 @@ export default function AdminProducts() {
                 height={600}
                 className="w-full h-[12rem] rounded-t-lg sm:h-[16rem]"
               />
-               <div className="w-full absolute inset-0 bg-black/20 h-full">
+               <div className="w-full absolute rounded-t-lg inset-0 bg-black/20 h-full">
                <div className="w-full absolute  inset-x-0 bottom-0 p-4 flex sm:hidden group-hover:flex items-end justify-end gap-x-2">
                   
                    <Deletes key={product.id} deleteFunction={() => deleteProduct(product.id)}/>
