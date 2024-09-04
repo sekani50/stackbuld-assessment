@@ -9,7 +9,7 @@ export default async function Page() {
 console.log(response)
   return (
     <div className=" w-full h-full">
-      <Landing data={null as any}/>
+      {/* <Landing data={null as any}/> */}
     </div>
   )
 }
