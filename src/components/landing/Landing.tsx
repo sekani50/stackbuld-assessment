@@ -6,11 +6,11 @@ import Image from "next/image";
 import { ScrollableCards } from "../ui/ScollableCardWrapper";
 import useProductStore from "@/store/globalProductStore";
 import { ProductWidget } from "../widgets/ProductWidet";
-import { TResponse } from "@/types";
+
 import { useGetRequest } from "@/hooks/request";
 
-export default function Landing({data}:{data: TResponse}) {
-  useGetRequest(data);
+export default function Landing() {
+  useGetRequest();
   const { products } = useProductStore();
   return (
     <div>
