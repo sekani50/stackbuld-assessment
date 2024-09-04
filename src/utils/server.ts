@@ -2,8 +2,8 @@ export async function getRequest<T>({ endpoint }: { endpoint: string }) {
   try {
     const isServer = typeof window === "undefined";
     const baseUrl = isServer
-      ? process.env.NEXT_PUBLIC_BASE_URL || "https://stackbuld-assessment.vercel.app"
-      : "https://stackbuld-assessment.vercel.app";
+      ? process.env.NEXT_PUBLIC_BASE_URL || ""
+      : "";
 
     const url = `${baseUrl}/api${endpoint}`;
     console.log('Fetching from URL:', url); // For debugging

@@ -6,33 +6,16 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   if (req.method === "GET") {
     try {
-      const jsonDirectory = path.join(process.cwd()); // directory path
-      
-       // Check and clear cache if it exists
-    const categoriesPath = path.join(jsonDirectory, "categories.json");
-    const productsPath = path.join(jsonDirectory, "products.json");
-
-    if (require.cache[require.resolve(categoriesPath)]) {
-      delete require.cache[require.resolve(categoriesPath)];
-    }
-    if (require.cache[require.resolve(productsPath)]) {
-      delete require.cache[require.resolve(productsPath)];
-    }
-      // Clear the require cache for the JSON files
-      // delete require.cache[
-      //   require.resolve(jsonDirectory + "/data/categories.json")
-      // ];
-      // delete require.cache[
-      //   require.resolve(jsonDirectory + "/data/products.json")
-      // ];
+      const jsonDirectory = path.join(process.cwd(), "public"); // directory path
+    
 
       // Read the JSON files
       const categoryFileContents = await fs.readFile(
-        jsonDirectory + "categories.json",
+        jsonDirectory + "/data/categories.json",
         "utf8"
       ); // file path
       const productFileContents = await fs.readFile(
-        jsonDirectory + "products.json",
+        jsonDirectory + "/data/products.json",
         "utf8"
       ); // file path
 
