@@ -7,7 +7,6 @@ export async function GET(req: NextRequest) {
   if (req.method === "GET") {
     try {
       const jsonDirectory = path.join(process.cwd(), "public"); // directory path
-    
 
       // Read the JSON files
       const categoryFileContents = await fs.readFile(
