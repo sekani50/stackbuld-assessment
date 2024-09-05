@@ -30,7 +30,7 @@ export function ScrollableCards({ children }: { children: React.ReactNode }) {
 			</div>
 			<div
 				ref={scroll}
-				className="hide-scroll w-[105%] flex gap-4 pr-[4em] pl-[0em] sm:pl-[1em] overflow-x-auto"
+				className="no-scrollbar w-[105%] flex gap-4 pr-[4em] pl-[0em] sm:pl-[1em] overflow-x-auto"
 			>
 				<div className="min-w-max flex gap-2 sm:gap-4 ">{children}</div>
 			</div>
